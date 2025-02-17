@@ -50,7 +50,7 @@ jobs:
           Write-Information "Setting name variables..."
           $releaseFileName = "extractor-linux-x64.zip"
           $executableFileName = "extractor"
-
+          
           if ("${{ runner.os }}" -like "*win*") {
             $releaseFileName = "extractor-win-x64.zip"
             $executableFileName = "extractor.exe"
@@ -66,12 +66,15 @@ jobs:
           $uri = "https://github.com/Azure/apiops/releases/download/${{ env.apiops_release_version }}/$releaseFileName"
           $downloadFilePath = Join-Path "${{ runner.temp }}" $releaseFileName
           Invoke-WebRequest -Uri "$uri" -OutFile "$downloadFilePath"
-
+                    
           Write-Information "Extracting release..."
           $executableFolderPath = Join-Path "${{ runner.temp }}" "extractor"
           Expand-Archive -Path "$downloadFilePath" -DestinationPath "$executableFolderPath"
           $executableFilePath = Join-Path "$executableFolderPath" $executableFileName
-
+          Write-Information "Executable Folder Path: $executableFilePath" 
+          Write-Information "Executable Folder Path: $executableFolderPath"
+          Write-Information "Executable Folder Path: $executableFileName" 
+          
           Write-Information "Setting file permissions..."
           if ("${{ runner.os }}" -like "*linux*")
           {
