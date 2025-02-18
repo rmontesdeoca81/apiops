@@ -29,7 +29,7 @@ jobs:
     environment: dev
     steps:
       - uses: actions/checkout@v4
-          
+
       - name: Run extractor without Config Yaml
         if: ${{ github.event.inputs.CONFIGURATION_YAML_PATH == 'Extract All APIs' }}
         env:
@@ -71,6 +71,8 @@ jobs:
           $executableFolderPath = Join-Path "${{ runner.temp }}" "extractor"
           Expand-Archive -Path "$downloadFilePath" -DestinationPath "$executableFolderPath"
           $executableFilePath = Join-Path "$executableFolderPath" $executableFileName
+          
+          Write-Information "File path: $executableFilePath"
 
           Write-Information "Setting file permissions..."
           if ("${{ runner.os }}" -like "*linux*")
