@@ -1,0 +1,10 @@
+{
+  "properties": {
+    "loggerType": "applicationInsights",
+    "credentials": {
+      "instrumentationKey": "{{Logger-Credentials--67bf3ec2217d2014e838e0ba}}"
+    },
+    "isBuffered": true,
+    "resourceId": "/subscriptions/1a94d910-fe8b-412c-b37e-64ce82995afe/resourceGroups/rgdemoxlogic/providers/microsoft.insights/components/appi-demo-mxc"
+  }
+}

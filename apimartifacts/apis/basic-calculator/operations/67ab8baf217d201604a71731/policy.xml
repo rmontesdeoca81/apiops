@@ -1,0 +1,59 @@
+<!--
+    - Policies are applied in the order they appear.
+    - Position <base/> inside a section to inherit policies from the outer scope.
+    - Comments within policies are not preserved.
+-->
+<!-- Add policies as children to the <inbound>, <outbound>, <backend>, and <on-error> elements -->
+<policies>
+	<!-- Throttle, authorize, validate, cache, or transform the requests -->
+	<inbound>
+		<base />
+		<set-query-parameter name="x-product-name" exists-action="override">
+			<value>@(context.Product?.Name ?? "none")</value>
+		</set-query-parameter>
+		<set-header name="x-request-context-data" exists-action="override">
+			<value>@(context.Deployment.Region)</value>
+		</set-header>
+		<set-header name="x-request-received-time" exists-action="override">
+			<value>{{TimeNow}}</value>
+		</set-header>
+	</inbound>
+	<!-- Control if and how the requests are forwarded to services  -->
+	<backend>
+		<base />
+	</backend>
+	<!-- Customize the responses -->
+	<outbound>
+		<base />
+		<xml-to-json kind="direct" apply="always" consider-accept-header="false" />
+		<set-header name="x-aspnet-version" exists-action="delete" />
+		<set-header name="x-powered-by" exists-action="delete" />
+		<choose>
+			<when condition="@(context.Response.StatusCode == 200)">
+				<send-one-way-request mode="new">
+					<set-url>https://webhook.site/1415ed43-6aa1-4faa-a9a6-5ef1880ba0af</set-url>
+					<set-method>POST</set-method>
+					<set-body>@{
+      return new JObject(
+        new JProperty("@type","MessageCard"),
+        new JProperty("@context", "http://schema.org/extensions"),
+        new JProperty("summary","Summary"),
+        new JProperty("themeColor", "0075FF"),
+        new JProperty("sections",
+          new JArray (
+            new JObject (
+              new JProperty("text", "Hello!")
+            )
+          )
+        )
+      ).ToString();
+    }</set-body>
+				</send-one-way-request>
+			</when>
+		</choose>
+	</outbound>
+	<!-- Handle exceptions and customize error responses  -->
+	<on-error>
+		<base />
+	</on-error>
+</policies>

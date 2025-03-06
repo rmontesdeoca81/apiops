@@ -1,0 +1,28 @@
+openapi: 3.0.1
+info:
+  title: demoxlogic
+  description: Import from "demoxlogic" Function App
+  version: '1.0'
+servers:
+  - url: https://apimaisdemo.azure-api.net/demoxlogic
+paths:
+  /XSLTTransform/triggers/When_a_HTTP_request_is_received/invoke:
+    post:
+      summary: XSLT
+      operationId: xslt
+      responses:
+        '200':
+          description: 
+components:
+  securitySchemes:
+    apiKeyHeader:
+      type: apiKey
+      name: Ocp-Apim-Subscription-Key
+      in: header
+    apiKeyQuery:
+      type: apiKey
+      name: subscription-key
+      in: query
+security:
+  - apiKeyHeader: [ ]
+  - apiKeyQuery: [ ]

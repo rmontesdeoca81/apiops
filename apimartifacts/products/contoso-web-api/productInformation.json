@@ -1,0 +1,9 @@
+{
+  "properties": {
+    "displayName": "Contoso Web API",
+    "description": "Contoso Suites Web API",
+    "approvalRequired": false,
+    "state": "published",
+    "subscriptionRequired": true
+  }
+}

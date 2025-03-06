@@ -1,14 +1,15 @@
 {
   "properties": {
-    "path": "sb-operations",
+    "path": "demoxlogic",
     "apiRevision": "1",
     "authenticationSettings": {},
+    "description": "Import from \u0022demoxlogic\u0022 Function App",
     "isCurrent": true,
-    "displayName": "Service Bus Operations",
+    "displayName": "demoxlogic",
     "protocols": [
       "https"
     ],
-    "serviceUrl": "https://apim-wkshp-ais.azure-api.net/sb-operations",
+    "serviceUrl": "https://demoxlogic.azurewebsites.net:443/api",
     "subscriptionKeyParameterNames": {
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"

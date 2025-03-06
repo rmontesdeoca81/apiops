@@ -1,0 +1,8 @@
+{
+  "properties": {
+    "description": "OnPremise self-hosted Gateeay",
+    "locationData": {
+      "name": "OnPremise"
+    }
+  }
+}

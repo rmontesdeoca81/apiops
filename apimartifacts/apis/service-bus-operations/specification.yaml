@@ -3,11 +3,12 @@ info:
   title: Service Bus Operations
   version: '1.0'
 servers:
-  - url: https://apim-wkshp-ais.azure-api.net/sb-operations
+  - url: https://apimaisdemo.azure-api.net/sb-operations
 paths:
   '/{queue_or_topic}':
     post:
       summary: Send Message
+      description: Send Message
       operationId: send-message
       parameters:
         - name: queue_or_topic
@@ -17,7 +18,7 @@ paths:
             type: string
       responses:
         '200':
-          description: 
+          description: ''
 components:
   securitySchemes:
     apiKeyHeader:

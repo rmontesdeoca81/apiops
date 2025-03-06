@@ -1,16 +1,17 @@
 {
   "properties": {
-    "path": "sb-operations",
+    "path": "azure-openai-api/openai",
     "apiRevision": "1",
     "authenticationSettings": {},
+    "description": "Azure OpenAI APIs for completions and search",
     "isCurrent": true,
-    "displayName": "Service Bus Operations",
+    "displayName": "Azure OpenAI API",
     "protocols": [
       "https"
     ],
-    "serviceUrl": "https://apim-wkshp-ais.azure-api.net/sb-operations",
+    "serviceUrl": "https://openai-s7txnevm6apdg.openai.azure.com/openai",
     "subscriptionKeyParameterNames": {
-      "header": "Ocp-Apim-Subscription-Key",
+      "header": "api-key",
       "query": "subscription-key"
     },
     "subscriptionRequired": true

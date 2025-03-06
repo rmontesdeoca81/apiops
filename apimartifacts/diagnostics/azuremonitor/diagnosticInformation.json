@@ -1,0 +1,34 @@
+{
+  "properties": {
+    "loggerId": "/subscriptions/1a94d910-fe8b-412c-b37e-64ce82995afe/resourceGroups/rgdemoxlogic/providers/Microsoft.ApiManagement/service/apimaisdemo/loggers/azuremonitor",
+    "backend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "frontend": {
+      "request": {
+        "dataMasking": {
+          "queryParams": [
+            {
+              "mode": "Hide",
+              "value": "*"
+            }
+          ]
+        }
+      }
+    },
+    "logClientIp": true,
+    "sampling": {
+      "percentage": 100,
+      "samplingType": "fixed"
+    }
+  }
+}
