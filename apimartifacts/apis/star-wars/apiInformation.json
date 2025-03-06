@@ -1,14 +1,15 @@
 {
   "properties": {
-    "path": "sb-operations",
+    "path": "sw",
     "apiRevision": "1",
     "authenticationSettings": {},
+    "description": "Star Wars Demo API",
     "isCurrent": true,
-    "displayName": "Service Bus Operations",
+    "displayName": "Star Wars ",
     "protocols": [
       "https"
     ],
-    "serviceUrl": "https://apim-wkshp-ais.azure-api.net/sb-operations",
+    "serviceUrl": "https://swapi.dev/api",
     "subscriptionKeyParameterNames": {
       "header": "Ocp-Apim-Subscription-Key",
       "query": "subscription-key"

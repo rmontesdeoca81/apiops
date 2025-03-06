@@ -3,7 +3,7 @@ info:
   title: Echo API
   version: '1.0'
 servers:
-  - url: https://apim-wkshp-ais.azure-api.net/echo
+  - url: https://apimaisdemo.azure-api.net/echo
 paths:
   /resource:
     get:

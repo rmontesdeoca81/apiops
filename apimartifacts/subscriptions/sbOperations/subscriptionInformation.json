@@ -1,7 +1,7 @@
 {
   "properties": {
     "displayName": "sbOperations",
-    "scope": "/subscriptions/1a94d910-fe8b-412c-b37e-64ce82995afe/resourceGroups/rg-WKSHP-AIS/providers/Microsoft.ApiManagement/service/apim-wkshp-ais/apis/service-bus-operations",
+    "scope": "/subscriptions/1a94d910-fe8b-412c-b37e-64ce82995afe/resourceGroups/rgdemoxlogic/providers/Microsoft.ApiManagement/service/apimaisdemo/apis/service-bus-operations",
     "allowTracing": false,
     "state": "active"
   }
